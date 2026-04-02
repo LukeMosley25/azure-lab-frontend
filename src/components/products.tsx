@@ -9,8 +9,7 @@ interface Product {
 }
 
 const Products = () => {
-https://nice-flower-0e947760f.1.azurestaticapps.net/    const [products, setProducts] = useState<Product[]>();
-    const titleRef = useRef<HTMLInputElement>(null);
+const url = "https://wa-ocu-azure-demo-hcdnahbmbfhudtdh.canadacentral-01.azurewebsites.net/products";
     const priceRef = useRef<HTMLInputElement>(null);
     const quantityRef = useRef<HTMLInputElement>(null);
 
