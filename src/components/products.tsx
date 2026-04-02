@@ -9,7 +9,12 @@ interface Product {
 }
 
 const Products = () => {
-const url = "https://wa-ocu-azure-demo-hcdnahbmbfhudtdh.canadacentral-01.azurewebsites.net/products";
+    // 1. Correct URL definition
+    const url = "https://wa-ocu-azure-demo-hcdnahbmbfhudtdh.canadacentral-01.azurewebsites.net/products";
+
+    // 2. Restore missing state and refs 
+    const [products, setProducts] = useState<Product[]>();
+    const titleRef = useRef<HTMLInputElement>(null);
     const priceRef = useRef<HTMLInputElement>(null);
     const quantityRef = useRef<HTMLInputElement>(null);
 
@@ -78,17 +83,17 @@ const url = "https://wa-ocu-azure-demo-hcdnahbmbfhudtdh.canadacentral-01.azurewe
             <div className="card" style={{width: 400}}>
                 <div className="card-body">
                     <h5 className="card-title">Add Product</h5>
-                    <p className="card-text">
-                    <form>
+                    <div className="card-text">
+                    <form onSubmit={(e) => e.preventDefault()}>
                         <label className="form-label">Title:</label>
                         <input className="form-control" ref={titleRef} type="text" id="inputTitle" />
                         <label className="form-label">Price:</label>
                         <input  className="form-control" ref={priceRef} type="number" id="inputPrice" />
                         <label className="form-label">Quantity:</label>
                         <input className="form-control" ref={quantityRef} type="number" id="inputQuanity" />
-                        <button className="btn btn-primary" type="submit" onClick={() => onAdd()}>Add</button>
+                        <button className="btn btn-primary" type="button" onClick={() => onAdd()}>Add</button>
                     </form>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,5 +101,3 @@ const url = "https://wa-ocu-azure-demo-hcdnahbmbfhudtdh.canadacentral-01.azurewe
 }
 
 export default Products;
-
-
