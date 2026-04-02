@@ -9,8 +9,7 @@ interface Product {
 }
 
 const Products = () => {
-    const url = "http://localhost:5174/products";
-    const [products, setProducts] = useState<Product[]>();
+https://nice-flower-0e947760f.1.azurestaticapps.net/    const [products, setProducts] = useState<Product[]>();
     const titleRef = useRef<HTMLInputElement>(null);
     const priceRef = useRef<HTMLInputElement>(null);
     const quantityRef = useRef<HTMLInputElement>(null);
